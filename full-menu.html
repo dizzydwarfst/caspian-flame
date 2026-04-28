@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Full Menu · Caspian Flame</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.svg" />
+<style>
+  .full-menu-page { padding: 120px 24px 80px; max-width: 1000px; margin: 0 auto; }
+  .full-menu-page h1 { text-align: center; color: var(--gold-400); margin-bottom: 60px; font-size: 3.5rem; }
+  .menu-category { margin-bottom: 60px; }
+  .menu-category h2 { color: var(--flame); font-size: 2.5rem; margin-bottom: 24px; border-bottom: 1px solid rgba(212,165,116,.2); padding-bottom: 10px; }
+  .menu-list { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 768px) { .menu-list { grid-template-columns: 1fr 1fr; } }
+  .menu-item-row { background: linear-gradient(180deg,var(--navy-700),var(--navy-800)); border: 1px solid rgba(212,165,116,.14); padding: 24px; border-radius: 16px; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); transform-style: preserve-3d; position: relative;}
+  .menu-item-row:hover { box-shadow: 0 30px 60px -10px rgba(230,57,70,.4); border-color: rgba(212,165,116,.5); }
+  .menu-item-row::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 0%,rgba(230,57,70,.18),transparent 60%); opacity:0; transition:opacity .5s var(--ease); border-radius: 16px; pointer-events: none;}
+  .menu-item-row:hover::before { opacity: 1; }
+  .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; transform: translateZ(20px); }
+  .m-name { font-family: var(--serif); font-size: 22px; color: var(--cream); font-weight: 600; }
+  .m-price { font-family: var(--serif); font-size: 20px; color: var(--gold-300); }
+  .m-desc { font-size: 14px; color: var(--muted); transform: translateZ(10px); }
+  
+  .back-nav { position: fixed; top: 0; left: 0; right: 0; padding: 20px 48px; background: rgba(6,16,31,.9); backdrop-filter: blur(10px); z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(212,165,116,.12); }
+  .back-btn { color: var(--gold-300); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
+  .back-btn:hover { color: var(--gold-500); }
+</style>
+</head>
+<body>
+
+<header class="back-nav">
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</header>
+
+<main class="full-menu-page stack">
+  <h1>Full Menu</h1>
+  
+  <section class="menu-category reveal">
+    <h2>Pizza</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Mexico Pizza</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Tomato sauce, Fior Di Latte Mozzarella, Taco sauce, Jalapeños, Red Onions, and Bolognese sauce.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Tuna Pizza</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Tomato sauce, Fior Di Latte Mozzarella, Tuna, Red Onions, Jalapeños, and Taco Sauce.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Margherita Pizza</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Tomato sauce, Fior Di Latte Mozzarella, and Basil.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Isabella Pizza</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Tomato sauce, Fior Di Latte Mozzarella, Olives, roasted Red Peppers, caramelized Onions, and roasted Mushrooms.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Banana Curry Pizza</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Tomato sauce, Fior di Latte Mozzarella, Banana slices, Pineapple & a hint of Curry spice. Sweet, savory & exotic.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Falafel & Mezze</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Falafel (6 Pieces)</span><span class="m-price">$31.98</span></div>
+        <p class="m-desc">Chickpea balls seasoned with herbs and spices.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Falafel (10 Pieces)</span><span class="m-price">$22.99</span></div>
+        <p class="m-desc">Chickpea balls seasoned with herbs and spices.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Dolma / Cabbage</span><span class="m-price">$31.98</span></div>
+        <p class="m-desc">Tender cabbage leaves stuffed with a flavorful mix of ground beef, rice, onions, and herbs, simmered to perfection.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Hummus</span><span class="m-price">$9.99</span></div>
+        <p class="m-desc">A classic Mediterranean dip made with blended chickpeas, tahini, lemon juice, and garlic, drizzled with extra virgin olive oil. Smooth, creamy, and perfect with warm bread.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Börek</span><span class="m-price">$9.99</span></div>
+        <p class="m-desc">Flaky filo pastry with your choice of meat, cheese, spinach-cheese, or potato filling.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Lahmacun & Pita</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Lahmacun</span><span class="m-price">$17.99</span></div>
+        <p class="m-desc">Crispy thin flatbread topped with spiced ground veal, red onions, tomatoes, and parsley. Traditionally served with lemon, fresh parsley, and onion garnish.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Pita</span><span class="m-price">$9.99</span></div>
+        <p class="m-desc">Handmade dough stretched into a paper-thin, translucent pastry, stuffed with various fillings, and rolled in a unique shape.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Döner</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Beef Döner Plate</span><span class="m-price">$25.99</span></div>
+        <p class="m-desc">Juicy marinated AAA Beef served with fresh veggies, herbs, and your choice of rice or bulgur, topped with our signature sauces.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Chicken Döner Plate</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Juicy marinated chicken served with fresh veggies, herbs, and your choice of rice or bulgur, topped with our signature sauces.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Beef Döner Lavash Wrap</span><span class="m-price">$23.99</span></div>
+        <p class="m-desc">Juicy marinated AAA beef with fresh veggies & herbs, wrapped in soft lavash with our signature sauces.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Chicken Döner Lavash Wrap</span><span class="m-price">$22.99</span></div>
+        <p class="m-desc">Juicy marinated chicken with fresh veggies & herbs, wrapped in soft lavash with our signature sauces.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Beef Döner Bread</span><span class="m-price">$21.99</span></div>
+        <p class="m-desc">Juicy marinated AAA beef, fresh veggies, and our signature sauces in warm baked bread.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Chicken Döner Bread</span><span class="m-price">$20.99</span></div>
+        <p class="m-desc">Juicy marinated chicken with fresh veggies & our signature sauces in warm baked bread.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Beef Döner Lavash Wrap (Regular)</span><span class="m-price">$17.99</span></div>
+        <p class="m-desc">Juicy marinated AAA beef with fresh veggies & herbs, wrapped in soft lavash with our signature sauces. Large includes free pops.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Chicken Döner Lavash Wrap (Regular)</span><span class="m-price">$16.99</span></div>
+        <p class="m-desc">Juicy marinated chicken with fresh veggies & herbs, wrapped in soft lavash with our signature sauces. Large includes free pops.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Beef Döner Bread (Regular)</span><span class="m-price">$15.99</span></div>
+        <p class="m-desc">Juicy marinated AAA beef, fresh veggies, and our signature sauces in warm baked bread. Large includes free pops.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Chicken Döner Bread (Regular)</span><span class="m-price">$14.99</span></div>
+        <p class="m-desc">Juicy marinated chicken with fresh veggies & our signature sauces in warm baked bread. Large includes free pops.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Pasta</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Spaghetti Bolognese</span><span class="m-price">$23.99</span></div>
+        <p class="m-desc">Spaghetti topped with rich Beef Bolognese sauce, slow-simmered with Tomatoes & Herbs, finished with Parmesan.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Lasagna</span><span class="m-price">$23.99</span></div>
+        <p class="m-desc">Layers of Pasta, rich Beef Bolognese sauce, Creamy Béchamel, Fior di Latte Mozzarella, and Parmesan Cheese, baked until golden and bubbly.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Tantuni</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Tantuni Lavash (Large)</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Juicy chopped AAA Beef with tomato, red onion & parsley, wrapped in soft lavash. Served with lemon & spicy chili pepper.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Tantuni Bread (Large)</span><span class="m-price">$22.99</span></div>
+        <p class="m-desc">Juicy chopped AAA beef with tomato, red onion & parsley, tucked in warm bread. Served with lemon & spicy chili pepper.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Tantuni Lavash (Regular)</span><span class="m-price">$18.99</span></div>
+        <p class="m-desc">Juicy chopped AAA Beef with tomato, red onion & parsley, wrapped in soft lavash. Served with lemon & spicy chili pepper.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Tantuni Bread (Regular)</span><span class="m-price">$17.99</span></div>
+        <p class="m-desc">Juicy chopped AAA beef with tomato, red onion & parsley, tucked in warm bread. Served with lemon & spicy chili pepper. Large includes free pops.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Pide</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">BEEF PIDE</span><span class="m-price">$23.99</span></div>
+        <p class="m-desc">Flatbread topped with AAA Beef, Mozzarella, roasted Onions, roasted Red Peppers, and roasted Mushrooms.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">CHICKEN PIDE</span><span class="m-price">$22.99</span></div>
+        <p class="m-desc"></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Soup & Sweet</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Lentil Soup</span><span class="m-price">$9.99</span></div>
+        <p class="m-desc">A comforting, traditional soup made with red lentils, onions, and aromatic spices. Smooth, nourishing, and served with a fresh lemon wedge on the side.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Honey Cake / Medovik</span><span class="m-price">$9.99</span></div>
+        <p class="m-desc">Layers of delicate honey-infused sponge cake filled with rich homemade cream - a classic Eastern European dessert.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Stacked Sweet</span><span class="m-price">$4.99</span></div>
+        <p class="m-desc">A traditional Caucasian-Anatolian pastry made with soft, layered dough and filled with a rich walnut mixture. Lightly sweet, buttery, and best enjoyed warm with tea or coffee.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Burger</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Smashed Double Veal Patty Burger</span><span class="m-price">$24.99</span></div>
+        <p class="m-desc">Smashed double juicy veal patties with melted cheese, lettuce, tomato, onion, pickles & our signature sauces in a toasted bun.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Smashed Single Veal Patty Burger</span><span class="m-price">$17.99</span></div>
+        <p class="m-desc">Smashed single juicy veal patty with melted cheese, lettuce, tomato, onion, pickles & our signature sauces in a toasted bun.</p>
+      </article>
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Chicken Burger</span><span class="m-price">$14.99</span></div>
+        <p class="m-desc">Tender, juicy grilled chicken breast layered with fresh lettuce, ripe tomato, crisp red onion, tangy pickles, and our signature house sauces, served in a toasted bun.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="menu-category reveal">
+    <h2>Soft Beverages</h2>
+    <div class="menu-list">
+      <article class="menu-item-row">
+        <div class="menu-item-header"><span class="m-name">Ayran Homemade with Veggies & Greens</span><span class="m-price">$7.99</span></div>
+        <p class="m-desc">A refreshing traditional summer dish made with chilled yogurt, diced fresh cucumber, some smashed garlic and various green herbs.</p>
+      </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Coca Cola Glass</span><span class="m-price">$4.49</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Apple Juice</span><span class="m-price">$4.49</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Perrier</span><span class="m-price">$4.49</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Coca Cola</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Coca Cola Diet</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Coca Cola Zero</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Sprite</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Ice Tea</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Pepsi</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Pepsi Zero</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Pepsi Diet</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Fanta</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Ginger Ale</span><span class="m-price">$3.99</span></div> <p class="m-desc"></p> </article>
+      <article class="menu-item-row"> <div class="menu-item-header"><span class="m-name">Spring Water</span><span class="m-price">$1.99</span></div> <p class="m-desc"></p> </article>
+    </div>
+  </section>
+
+</main>
+<script>
+  // Add simple 3D effect to menu items on mousemove
+  document.querySelectorAll('.menu-item-row').forEach(row => {
+    row.addEventListener('mousemove', e => {
+      const rect = row.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const midX = rect.width / 2;
+      const midY = rect.height / 2;
+      const rotX = ((y - midY) / midY) * -12;
+      const rotY = ((x - midX) / midX) * 12;
+      row.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+      row.style.zIndex = 10;
+    });
+    row.addEventListener('mouseleave', () => {
+      row.style.transform = '';
+      row.style.zIndex = 1;
+    });
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('in'));
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

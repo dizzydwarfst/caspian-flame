@@ -163,15 +163,19 @@ heroStage.addEventListener('mouseleave', () => {
   heroLayers.forEach(l => l.style.transform = '');
 });
 
-// ---------- Tilt card (story) ----------
-document.querySelectorAll('[data-tilt]').forEach(card => {
+// ---------- Tilt card (story & others) ----------
+document.querySelectorAll('[data-tilt], .visit-card, .cater-form').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width - 0.5;
     const py = (e.clientY - r.top) / r.height - 0.5;
-    card.style.transform = `rotateY(${px * 18}deg) rotateX(${-py * 18}deg)`;
+    card.style.transform = `perspective(1400px) rotateY(${px * 12}deg) rotateX(${-py * 12}deg) scale3d(1.02, 1.02, 1.02)`;
+    card.style.zIndex = 10;
   });
-  card.addEventListener('mouseleave', () => card.style.transform = '');
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.zIndex = 1;
+  });
 });
 
 // ---------- Menu rendering ----------
