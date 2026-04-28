@@ -314,3 +314,60 @@ document.getElementById('reserveForm').addEventListener('submit', e => {
   msg.textContent = `Thank you, ${f.name.value.trim()} — we’ll confirm your table for ${f.guests.value} on ${f.date.value} at ${f.time.value}.`;
   f.reset(); f.guests.value = 2;
 });
+
+// ---------- Animated counter ----------
+function animateCounters() {
+  document.querySelectorAll('.stat').forEach(stat => {
+    const numEl = stat.querySelector('.stat-num');
+    if (!numEl || stat.dataset.animated) return;
+    const target = parseFloat(stat.dataset.target);
+    const suffix = stat.dataset.suffix || '';
+    const decimals = parseInt(stat.dataset.decimals) || 0;
+    const duration = 2000;
+    const start = performance.now();
+
+    stat.dataset.animated = 'true';
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+
+      if (decimals > 0) {
+        numEl.textContent = current.toFixed(decimals) + suffix;
+      } else {
+        numEl.textContent = Math.floor(current).toLocaleString() + suffix;
+      }
+
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+const statsObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounters();
+      statsObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const statsSection = document.querySelector('.stats-inner');
+if (statsSection) statsObserver.observe(statsSection);
+
+// ---------- Testimonial card 3D tilt ----------
+document.querySelectorAll('.testimonial-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `translateY(-6px) perspective(800px) rotateY(${px * 10}deg) rotateX(${-py * 10}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});

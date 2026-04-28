@@ -393,6 +393,137 @@ body.promo-dismissed .nav{top:0}
 }
 
 /* ============================================================
+   Stats counter
+============================================================ */
+.stats{
+  padding:80px 48px;
+  background:linear-gradient(180deg,var(--navy-900),var(--navy-800),var(--navy-900));
+}
+.stats-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;gap:0;
+  background:rgba(15,30,54,.4);backdrop-filter:blur(24px) saturate(160%);
+  border:2px solid rgba(212,165,116,.3);
+  border-radius:28px;padding:60px 40px;
+  box-shadow:0 30px 60px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.03);
+}
+.stat{
+  flex:1;text-align:center;padding:0 20px;
+}
+.stat-num{
+  font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);
+  font-weight:700;color:var(--gold-300);line-height:1;
+  display:block;margin-bottom:8px;
+  text-shadow:0 4px 20px rgba(212,165,116,.4);
+}
+.stat-label{
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;
+}
+.stat-divider{
+  width:1px;height:80px;
+  background:linear-gradient(180deg,transparent,rgba(212,165,116,.4),transparent);
+  flex-shrink:0;
+}
+@media (max-width:780px){
+  .stats{padding:60px 20px}
+  .stats-inner{flex-direction:column;gap:30px;padding:40px 24px}
+  .stat-divider{width:60px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(212,165,116,.4),transparent);}
+  .stat-num{font-size:2.6rem}
+}
+
+/* ============================================================
+   Testimonials
+============================================================ */
+.testimonials{
+  padding:140px 0 160px;
+  background:linear-gradient(180deg,var(--navy-900),var(--navy-800),var(--navy-900));
+  overflow:hidden;
+}
+.testimonials-head{
+  text-align:center;max-width:760px;margin:0 auto 60px;padding:0 24px;
+}
+.testimonials-head h2{margin:8px 0 14px}
+.testimonials-sub{color:var(--muted);font-size:15px}
+
+.testimonials-track{
+  display:flex;gap:28px;overflow-x:auto;
+  padding:20px 8vw 40px;scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+.testimonials-track::-webkit-scrollbar{display:none}
+
+.testimonial-card{
+  flex:0 0 380px;
+  background:rgba(15,30,54,.4);backdrop-filter:blur(20px) saturate(140%);
+  border:2px solid rgba(212,165,116,.3);
+  border-radius:24px;padding:36px 32px;
+  scroll-snap-align:center;
+  display:flex;flex-direction:column;gap:20px;
+  transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .4s;
+  position:relative;overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+.testimonial-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--gold-500);
+  box-shadow:0 40px 80px -20px rgba(230,57,70,.4), 0 0 0 1px rgba(212,165,116,.3);
+}
+.testimonial-card::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(230,57,70,.12),transparent 60%);
+  opacity:0;transition:opacity .5s var(--ease);pointer-events:none;
+}
+.testimonial-card:hover::before{opacity:1}
+
+.tc-stars{
+  color:var(--gold-500);font-size:14px;letter-spacing:.4em;
+}
+.tc-quote{
+  font-family:var(--serif);font-size:18px;font-style:italic;
+  color:var(--cream);line-height:1.6;flex:1;
+}
+.tc-author{
+  display:flex;align-items:center;gap:14px;
+  padding-top:16px;border-top:1px solid rgba(212,165,116,.15);
+}
+.tc-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--flame),var(--flame-2));
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;
+  flex-shrink:0;
+}
+.tc-author strong{
+  display:block;color:var(--cream);font-size:14px;font-weight:600;
+}
+.tc-author span{
+  font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+}
+
+@media (max-width:780px){
+  .testimonials{padding:80px 0 100px}
+  .testimonials-track{padding:16px 6vw 30px;gap:18px}
+  .testimonial-card{flex-basis:85vw;padding:28px 24px}
+  .tc-quote{font-size:16px}
+}
+
+/* ============================================================
+   Map embed (in Visit section)
+============================================================ */
+.visit-map{
+  margin:40px 0 50px;position:relative;border-radius:20px;overflow:hidden;
+  border:2px solid rgba(212,165,116,.25);
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+.visit-map iframe{display:block;width:100%}
+@media (max-width:780px){
+  .visit-map{margin:30px 0 36px}
+  .visit-map iframe{height:240px !important}
+}
+
+/* ============================================================
    Menu (sliding rail)
 ============================================================ */
 .menu{padding:140px 0 160px;background:linear-gradient(180deg,var(--navy-900) 0%,var(--navy-800) 50%,var(--navy-900) 100%)}
