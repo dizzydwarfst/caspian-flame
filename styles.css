@@ -257,7 +257,7 @@ body.promo-dismissed .nav{top:0}
   width:100%;max-width:1100px;
 }
 .hero-medallion{
-  width:160px;margin:0 auto 36px;
+  width:200px;margin:0 auto 36px;
   transform-style:preserve-3d;
   animation:medallionFloat 6s ease-in-out infinite;
   filter:drop-shadow(0 30px 60px rgba(230,57,70,.35));
