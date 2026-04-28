@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+    <radialGradient id="bg" cx="50%" cy="45%" r="60%">
       <stop offset="0%" stop-color="#0f1e36"/>
       <stop offset="100%" stop-color="#06101f"/>
     </radialGradient>
@@ -10,15 +10,35 @@
       <stop offset="100%" stop-color="#7a1020"/>
     </linearGradient>
   </defs>
+
   <circle cx="250" cy="250" r="248" fill="url(#bg)"/>
-  <rect x="60" y="120" width="380" height="260" rx="14" fill="none" stroke="#d4a574" stroke-width="2"/>
-  <text x="135" y="240" font-family="Cormorant Garamond, Georgia, serif" font-size="54" font-weight="600" fill="#d4a574" letter-spacing="2">CASPIAN</text>
-  <text x="305" y="240" font-family="Cormorant Garamond, Georgia, serif" font-size="54" font-weight="600" fill="#d4a574" letter-spacing="2">FLAME</text>
-  <g transform="translate(250 195)">
-    <path d="M0 -45 C 8 -28 22 -22 22 0 a 22 22 0 1 1 -44 0 c 0 -12 6 -16 8 -22 0 6 4 8 6 4 0 -10 -4 -18 8 -27 z" fill="url(#flame)"/>
+  <circle cx="250" cy="250" r="246" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.35"/>
+
+  <rect x="70" y="160" width="360" height="180" rx="14" fill="none" stroke="#d4a574" stroke-width="1.5"/>
+
+  <text x="222" y="248" text-anchor="end"
+        font-family="Cormorant Garamond, Georgia, serif"
+        font-size="46" font-weight="700" fill="#d4a574" letter-spacing="3">CASPIAN</text>
+
+  <g transform="translate(250 226)">
+    <path d="M0 -28 C 6 -16 16 -12 16 4 a 16 16 0 1 1 -32 0 c 0 -8 4 -11 6 -16 0 4 3 6 4 4 0 -7 -2 -12 6 -20 z"
+          fill="url(#flame)"/>
   </g>
-  <line x1="80" y1="265" x2="420" y2="265" stroke="#d4a574" stroke-width="1"/>
-  <text x="250" y="295" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#e8c08a" letter-spacing="3">MEDITERRANEAN SOUL · ANATOLIAN HEART</text>
-  <text x="250" y="318" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#e8c08a" letter-spacing="3">CAUCASIAN TASTE</text>
-  <text x="250" y="360" text-anchor="middle" font-family="Inter" font-size="22" fill="#d4a574" letter-spacing="6">★ ★ ★ ★ ★</text>
+
+  <text x="278" y="248" text-anchor="start"
+        font-family="Cormorant Garamond, Georgia, serif"
+        font-size="46" font-weight="700" fill="#d4a574" letter-spacing="3">FLAME</text>
+
+  <line x1="100" y1="270" x2="400" y2="270" stroke="#d4a574" stroke-width="0.8" opacity="0.8"/>
+
+  <text x="250" y="295" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="10" font-weight="500" fill="#d4a574" letter-spacing="3">MEDITERRANEAN SOUL · ANATOLIAN HEART</text>
+  <text x="250" y="312" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="10" font-weight="500" fill="#d4a574" letter-spacing="3">CAUCASIAN TASTE</text>
+
+  <text x="250" y="335" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="13" fill="#d4a574" letter-spacing="6">★ ★ ★ ★ ★</text>
 </svg>
