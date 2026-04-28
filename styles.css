@@ -495,6 +495,11 @@ body.promo-dismissed .nav{top:0}
   font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;
   flex-shrink:0;
 }
+.tc-avatar-img{
+  width:44px;height:44px;border-radius:50%;
+  object-fit:cover;flex-shrink:0;
+  border:2px solid rgba(212,165,116,.4);
+}
 .tc-author strong{
   display:block;color:var(--cream);font-size:14px;font-weight:600;
 }
