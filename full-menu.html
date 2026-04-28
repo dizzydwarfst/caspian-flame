@@ -261,6 +261,48 @@
 
 </main>
 <script>
+  // Dynamic background image map
+  const CAT_IMAGES = {
+    'Pizza': 'assets/margherita_pizza.png',
+    'Falafel & Mezze': 'assets/hummus.png',
+    'Lahmacun & Pita': 'assets/lahmacun.png',
+    'Döner': 'assets/beef_doner.png',
+    'Pasta': 'assets/margherita_pizza.png',
+    'Tantuni': 'assets/beef_doner.png',
+    'Pide': 'assets/beef_pide.png',
+    'Soup & Sweet': 'assets/margherita_pizza.png',
+    'Burger': 'assets/beef_doner.png',
+    'Soft Beverages': 'assets/hummus.png'
+  };
+
+  document.querySelectorAll('.menu-category').forEach(sec => {
+    const title = sec.querySelector('h2').innerText.trim();
+    const bgUrl = CAT_IMAGES[title];
+    if(bgUrl) {
+      sec.querySelectorAll('.menu-item-row').forEach(row => {
+        row.style.backgroundImage = `url('${bgUrl}')`;
+        row.style.backgroundSize = 'cover';
+        row.style.backgroundPosition = 'center';
+        
+        const overlay = document.createElement('div');
+        overlay.style.position = 'absolute';
+        overlay.style.inset = '0';
+        overlay.style.background = 'linear-gradient(180deg, rgba(6,16,31,0.2) 0%, rgba(6,16,31,0.95) 100%)';
+        overlay.style.zIndex = '0';
+        overlay.style.pointerEvents = 'none';
+        overlay.style.borderRadius = '16px';
+        row.prepend(overlay);
+        
+        row.querySelectorAll('div, p, span').forEach(child => {
+          if(child !== overlay) {
+            child.style.position = 'relative';
+            child.style.zIndex = '1';
+          }
+        });
+      });
+    }
+  });
+
   // Add simple 3D effect to menu items on mousemove
   document.querySelectorAll('.menu-item-row').forEach(row => {
     row.addEventListener('mousemove', e => {

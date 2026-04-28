@@ -178,19 +178,32 @@ document.querySelectorAll('[data-tilt], .visit-card, .cater-form').forEach(card 
   });
 });
 
-// ---------- Menu rendering ----------
 const rail = document.getElementById('menuRail');
 const tabs = document.getElementById('menuTabs');
 
+const CAT_IMAGES = {
+  doner: 'assets/beef_doner.png',
+  pide: 'assets/beef_pide.png',
+  pizza: 'assets/margherita_pizza.png',
+  tantuni: 'assets/beef_doner.png',
+  pasta: 'assets/margherita_pizza.png',
+  mezze: 'assets/hummus.png',
+  burger: 'assets/beef_doner.png',
+  sweets: 'assets/margherita_pizza.png',
+  drinks: 'assets/hummus.png'
+};
+
 function renderMenu(key){
   const data = MENU[key];
+  const bgImg = CAT_IMAGES[key] || 'assets/beef_doner.png';
   rail.innerHTML = data.items.map((it, i) => `
-    <article class="dish" style="animation-delay:${i * 60}ms">
-      <span class="dish-cat">${data.label}</span>
-      <div class="dish-icon">${data.icon}</div>
-      <h3 class="dish-name">${it.name}</h3>
-      <p class="dish-desc">${it.desc}</p>
-      <div class="dish-foot">
+    <article class="dish" style="animation-delay:${i * 60}ms; background-image: url('${bgImg}'); background-size: cover; background-position: center;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,16,31,0.2) 0%, rgba(6,16,31,0.95) 100%); z-index: 0; pointer-events: none; border-radius: 28px;"></div>
+      <span class="dish-cat" style="z-index: 1">${data.label}</span>
+      <div class="dish-icon" style="z-index: 1">${data.icon}</div>
+      <h3 class="dish-name" style="z-index: 1">${it.name}</h3>
+      <p class="dish-desc" style="z-index: 1">${it.desc}</p>
+      <div class="dish-foot" style="z-index: 1">
         <span class="dish-price">$${it.price.split('.')[0]}<sup>.${it.price.split('.')[1]}</sup></span>
         <span class="dish-arrow">↗</span>
       </div>
