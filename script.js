@@ -290,28 +290,6 @@ promoClose.addEventListener('click', () => {
   localStorage.setItem('cf_promo_dismissed', '1');
 });
 
-// ---------- Gallery: load food images with fallback ----------
-const galleryCards = document.querySelectorAll('.g-card');
-galleryCards.forEach((card, i) => {
-  const q = encodeURIComponent(card.dataset.q || 'food');
-  // Use Unsplash Source endpoint with a stable seed per card
-  const url = `https://source.unsplash.com/featured/800x800/?${q}&sig=${i}`;
-  const img = new Image();
-  img.onload = () => {
-    card.style.setProperty('--bg', `url(${img.src})`);
-  };
-  img.onerror = () => {
-    // graceful fallback gradient
-    const palette = [
-      'linear-gradient(135deg,#7a1020,#e63946,#ffb84d)',
-      'linear-gradient(135deg,#0a1628,#16294a,#d4a574)',
-      'linear-gradient(135deg,#3a1810,#a04020,#e8c08a)',
-    ];
-    card.style.setProperty('--bg', palette[i % palette.length]);
-  };
-  img.src = url;
-});
-
 // ---------- Catering form ----------
 document.getElementById('cateringForm').addEventListener('submit', e => {
   e.preventDefault();
