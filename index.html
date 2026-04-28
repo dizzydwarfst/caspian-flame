@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Caspian Flame · Mediterranean Soul · Anatolian Heart · Caucasian Taste</title>
+<meta name="description" content="Caspian Flame — a Vancouver restaurant where the Mediterranean, Anatolia and the Caucasus meet on one plate. Döner, pide, pizza, lahmacun and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.svg" />
+</head>
+<body>
+
+<!-- ===== Cursor flame ===== -->
+<div class="cursor-flame" id="cursorFlame" aria-hidden="true"></div>
+
+<!-- ===== Loader ===== -->
+<div class="loader" id="loader">
+  <div class="loader-flame">
+    <span></span><span></span><span></span>
+  </div>
+  <p>Igniting the flame…</p>
+</div>
+
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav-logo">
+    <img src="assets/logo.svg" alt="Caspian Flame" />
+  </a>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#story">Story</a>
+    <a href="#menu">Menu</a>
+    <a href="#signature">Signature</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <a href="#visit" class="nav-cta">Reserve <span>→</span></a>
+  <button class="nav-burger" id="navBurger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-medallion" data-depth="0.4">
+      <img src="assets/logo.svg" alt="" />
+    </div>
+
+    <div class="hero-text" data-depth="0.15">
+      <p class="eyebrow">Vancouver · Est. on Fire</p>
+      <h1>
+        <span class="line"><span>Three</span></span>
+        <span class="line"><span>Shores,</span></span>
+        <span class="line gold"><span>One Flame.</span></span>
+      </h1>
+      <p class="lede">
+        A Mediterranean soul, an Anatolian heart and a Caucasian taste — served
+        on charcoal-blistered lavash and slow-cooked rice.
+      </p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-primary"><span>Explore the Menu</span></a>
+        <a href="#visit" class="btn btn-ghost"><span>Find Us</span></a>
+      </div>
+    </div>
+
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Döner</span><span>·</span><span>Pide</span><span>·</span>
+        <span>Lahmacun</span><span>·</span><span>Tantuni</span><span>·</span>
+        <span>Falafel</span><span>·</span><span>Hummus</span><span>·</span>
+        <span>Medovik</span><span>·</span><span>Börek</span><span>·</span>
+        <span>Döner</span><span>·</span><span>Pide</span><span>·</span>
+        <span>Lahmacun</span><span>·</span><span>Tantuni</span><span>·</span>
+        <span>Falafel</span><span>·</span><span>Hummus</span><span>·</span>
+        <span>Medovik</span><span>·</span><span>Börek</span><span>·</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#story" class="scroll-cue">
+    <span></span>
+    <small>scroll</small>
+  </a>
+</section>
+
+<!-- ===== Story ===== -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-copy reveal">
+      <p class="eyebrow">Our Story</p>
+      <h2>Where three cuisines<br/>share <em>one fire.</em></h2>
+      <p>
+        Caspian Flame was born from a simple belief: the best food in the world
+        sits where cultures meet. From the olive groves of the Mediterranean,
+        across the bread-and-spice markets of Anatolia, to the herb-laden
+        kitchens of the Caucasus — every dish on our menu carries a passport.
+      </p>
+      <p>
+        We hand-stretch our pide. We slow-marinate AAA beef. We chop tantuni to
+        order on a hot plate. And we wrap it all in lavash baked the same morning.
+      </p>
+      <ul class="badges">
+        <li>★ AAA Beef</li>
+        <li>★ Hand-stretched Pide</li>
+        <li>★ House Sauces</li>
+        <li>★ Daily Lavash</li>
+      </ul>
+    </div>
+
+    <div class="story-visual reveal">
+      <div class="tilt" data-tilt>
+        <div class="tilt-inner">
+          <div class="tilt-layer img"></div>
+          <div class="tilt-layer ring"></div>
+          <div class="tilt-layer flame">
+            <svg viewBox="0 0 60 80" aria-hidden="true">
+              <path d="M30 4c4 14 18 18 18 36a18 18 0 1 1-36 0c0-10 6-14 6-22 0 6 4 8 6 6 0-8-2-14 6-20z" fill="url(#g)"/>
+              <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#ffb84d"/>
+                <stop offset=".55" stop-color="#e63946"/>
+                <stop offset="1" stop-color="#7a1020"/>
+              </linearGradient></defs>
+            </svg>
+          </div>
+          <div class="tilt-layer label">
+            <span>Caspian Flame</span>
+            <small>since the first ember</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Menu ===== -->
+<section class="menu" id="menu">
+  <div class="menu-head">
+    <p class="eyebrow">The Menu</p>
+    <h2>Slide. Tilt. <em>Taste.</em></h2>
+    <p class="menu-sub">Drag, scroll or tap a card. Each plate tilts to its own light.</p>
+  </div>
+
+  <div class="menu-tabs" id="menuTabs">
+    <button class="active" data-tab="doner">Döner</button>
+    <button data-tab="pide">Pide</button>
+    <button data-tab="pizza">Pizza</button>
+    <button data-tab="tantuni">Tantuni</button>
+    <button data-tab="pasta">Pasta</button>
+    <button data-tab="mezze">Mezze</button>
+    <button data-tab="burger">Burger</button>
+    <button data-tab="sweets">Sweets</button>
+    <button data-tab="drinks">Drinks</button>
+  </div>
+
+  <div class="menu-rail-wrap">
+    <button class="rail-btn prev" id="railPrev" aria-label="Previous">‹</button>
+    <div class="menu-rail" id="menuRail"></div>
+    <button class="rail-btn next" id="railNext" aria-label="Next">›</button>
+  </div>
+</section>
+
+<!-- ===== Signature parallax ===== -->
+<section class="signature" id="signature">
+  <div class="parallax-layer back" data-depth="0.2"></div>
+  <div class="parallax-layer mid" data-depth="0.45"></div>
+
+  <div class="signature-content reveal">
+    <p class="eyebrow">Signature</p>
+    <h2>The Beef Döner Plate</h2>
+    <p>
+      Marinated AAA beef, shaved off the vertical spit, served over saffron rice
+      or cracked-wheat bulgur, dressed with our signature sauces and a fistful
+      of fresh herbs. The dish that built the flame.
+    </p>
+    <div class="signature-price">
+      <span class="amount">$25<sup>.99</sup></span>
+      <span class="line"></span>
+      <span class="caption">Plate · Served all day</span>
+    </div>
+  </div>
+
+  <div class="parallax-layer front" data-depth="0.75"></div>
+</section>
+
+<!-- ===== Visit ===== -->
+<section class="visit" id="visit">
+  <div class="visit-card reveal">
+    <p class="eyebrow">Visit Us</p>
+    <h2>Pull up a chair<br/>in <em>Vancouver.</em></h2>
+
+    <div class="visit-grid">
+      <div>
+        <h4>Hours</h4>
+        <p>Mon – Thu · 11am – 10pm</p>
+        <p>Fri – Sat · 11am – 12am</p>
+        <p>Sun · 12pm – 10pm</p>
+      </div>
+      <div>
+        <h4>Find Us</h4>
+        <p>Vancouver, BC</p>
+        <p>Canada</p>
+        <p><a href="#">Get Directions →</a></p>
+      </div>
+      <div>
+        <h4>Reach Out</h4>
+        <p><a href="#">hello@caspianflame.ca</a></p>
+        <p>Reservations welcome</p>
+        <p>Catering on request</p>
+      </div>
+    </div>
+
+    <form class="reserve" id="reserveForm" autocomplete="off">
+      <div class="row">
+        <label><span>Name</span><input type="text" required name="name" /></label>
+        <label><span>Guests</span><input type="number" min="1" max="20" required name="guests" value="2" /></label>
+      </div>
+      <div class="row">
+        <label><span>Date</span><input type="date" required name="date" /></label>
+        <label><span>Time</span><input type="time" required name="time" /></label>
+      </div>
+      <label class="full"><span>Note</span><input type="text" name="note" placeholder="Birthday, allergies, window seat…" /></label>
+      <button class="btn btn-primary"><span>Request Table</span></button>
+      <p class="reserve-msg" id="reserveMsg"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="foot">
+  <div class="foot-top">
+    <img src="assets/logo.svg" alt="Caspian Flame" class="foot-logo" />
+    <p class="foot-tag">Mediterranean Soul · Anatolian Heart · Caucasian Taste</p>
+    <div class="foot-stars">★ ★ ★ ★ ★</div>
+  </div>
+  <div class="foot-bot">
+    <span>© <span id="year"></span> Caspian Flame · Vancouver, BC</span>
+    <span>Crafted with fire 🔥</span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
