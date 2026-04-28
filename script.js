@@ -6,7 +6,6 @@
 const MENU = {
   doner: {
     label: 'Döner',
-    icon: '🥙',
     items: [
       { name: 'Beef Döner Plate', price: '25.99', desc: 'Marinated AAA beef over saffron rice or bulgur, fresh herbs and signature sauces.' },
       { name: 'Chicken Döner Plate', price: '24.99', desc: 'Juicy marinated chicken with rice or bulgur, herbs and signature sauces.' },
@@ -22,7 +21,6 @@ const MENU = {
   },
   pide: {
     label: 'Pide',
-    icon: '🫓',
     items: [
       { name: 'Beef Pide', price: '23.99', desc: 'Hand-stretched flatbread with AAA beef, mozzarella, roasted onions, peppers and mushrooms.' },
       { name: 'Chicken Pide', price: '22.99', desc: 'Hand-stretched flatbread with marinated chicken and our signature toppings.' },
@@ -32,7 +30,6 @@ const MENU = {
   },
   pizza: {
     label: 'Pizza',
-    icon: '🍕',
     items: [
       { name: 'Margherita Pizza', price: '24.99', desc: 'Tomato sauce, Fior di Latte mozzarella and fresh basil. The classic.' },
       { name: 'Mexico Pizza', price: '24.99', desc: 'Mozzarella, taco sauce, jalapeños, red onions and bolognese.' },
@@ -43,7 +40,6 @@ const MENU = {
   },
   tantuni: {
     label: 'Tantuni',
-    icon: '🌯',
     items: [
       { name: 'Tantuni Lavash (Large)', price: '24.99', desc: 'Chopped AAA beef, tomato, red onion & parsley in soft lavash. Lemon & chili on the side.' },
       { name: 'Tantuni Bread (Large)', price: '22.99', desc: 'Chopped AAA beef in warm bread with lemon & spicy chili pepper.' },
@@ -53,7 +49,6 @@ const MENU = {
   },
   pasta: {
     label: 'Pasta',
-    icon: '🍝',
     items: [
       { name: 'Spaghetti Bolognese', price: '23.99', desc: 'Spaghetti with rich slow-simmered beef bolognese, finished with parmesan.' },
       { name: 'Lasagna', price: '23.99', desc: 'Layers of pasta, beef bolognese, creamy béchamel, mozzarella and parmesan, baked golden.' },
@@ -61,7 +56,6 @@ const MENU = {
   },
   mezze: {
     label: 'Mezze',
-    icon: '🥣',
     items: [
       { name: 'Hummus', price: '9.99', desc: 'Chickpeas, tahini, lemon, garlic and extra virgin olive oil. Smooth and creamy.' },
       { name: 'Lentil Soup', price: '9.99', desc: 'Red lentils, onions and aromatic spices. Smooth, nourishing — served with lemon.' },
@@ -74,7 +68,6 @@ const MENU = {
   },
   burger: {
     label: 'Burger',
-    icon: '🍔',
     items: [
       { name: 'Smashed Double Veal Patty', price: '24.99', desc: 'Two smashed veal patties, melted cheese, lettuce, tomato, onion, pickles, signature sauces.' },
       { name: 'Smashed Single Veal Patty', price: '17.99', desc: 'Single smashed veal patty with melted cheese and the works in a toasted bun.' },
@@ -83,7 +76,6 @@ const MENU = {
   },
   sweets: {
     label: 'Sweets',
-    icon: '🍰',
     items: [
       { name: 'Honey Cake / Medovik', price: '9.99', desc: 'Layers of honey-infused sponge filled with rich homemade cream. A Caucasian classic.' },
       { name: 'Stacked Sweet', price: '4.99', desc: 'Caucasian-Anatolian layered pastry with a rich walnut filling. Buttery, lightly sweet.' },
@@ -91,7 +83,6 @@ const MENU = {
   },
   drinks: {
     label: 'Drinks',
-    icon: '🥤',
     items: [
       { name: 'Coca Cola Glass', price: '4.49', desc: 'Classic Coca Cola in a glass bottle.' },
       { name: 'Apple Juice', price: '4.49', desc: 'Crisp apple juice.' },
@@ -200,7 +191,6 @@ function renderMenu(key){
     <article class="dish" style="animation-delay:${i * 60}ms; background-image: url('${bgImg}'); background-size: cover; background-position: center;">
       <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,16,31,0.2) 0%, rgba(6,16,31,0.95) 100%); z-index: 0; pointer-events: none; border-radius: 28px;"></div>
       <span class="dish-cat" style="z-index: 1">${data.label}</span>
-      <div class="dish-icon" style="z-index: 1">${data.icon}</div>
       <h3 class="dish-name" style="z-index: 1">${it.name}</h3>
       <p class="dish-desc" style="z-index: 1">${it.desc}</p>
       <div class="dish-foot" style="z-index: 1">
