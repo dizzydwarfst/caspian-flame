@@ -16,6 +16,12 @@
 <!-- ===== Cursor flame ===== -->
 <div class="cursor-flame" id="cursorFlame" aria-hidden="true"></div>
 
+<!-- ===== Promo bar ===== -->
+<div class="promo" id="promo">
+  <div class="promo-track" id="promoTrack" aria-live="polite"></div>
+  <button class="promo-close" id="promoClose" aria-label="Dismiss">×</button>
+</div>
+
 <!-- ===== Loader ===== -->
 <div class="loader" id="loader">
   <div class="loader-flame">
@@ -36,7 +42,8 @@
     <a href="#home">Home</a>
     <a href="#story">Story</a>
     <a href="#menu">Menu</a>
-    <a href="#signature">Signature</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#catering">Catering</a>
     <a href="#visit">Visit</a>
   </nav>
   <a href="#visit" class="nav-cta">Reserve <span>→</span></a>
@@ -171,6 +178,42 @@
   </div>
 </section>
 
+<!-- ===== Gallery ===== -->
+<section class="gallery stack" id="gallery">
+  <div class="gallery-head">
+    <p class="eyebrow">Gallery</p>
+    <h2>Made on <em>fire.</em><br/>Plated with love.</h2>
+    <p class="gallery-sub">A taste of what's coming out of our kitchen tonight.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <figure class="g-card big" data-q="doner kebab vertical spit">
+      <span class="g-tag">Beef Döner</span>
+    </figure>
+    <figure class="g-card" data-q="turkish pide flatbread">
+      <span class="g-tag">Beef Pide</span>
+    </figure>
+    <figure class="g-card" data-q="margherita pizza wood fire">
+      <span class="g-tag">Margherita</span>
+    </figure>
+    <figure class="g-card tall" data-q="lahmacun turkish flatbread">
+      <span class="g-tag">Lahmacun</span>
+    </figure>
+    <figure class="g-card" data-q="hummus mediterranean dip">
+      <span class="g-tag">Hummus</span>
+    </figure>
+    <figure class="g-card" data-q="falafel chickpea balls">
+      <span class="g-tag">Falafel</span>
+    </figure>
+    <figure class="g-card big" data-q="lavash wrap mediterranean">
+      <span class="g-tag">Tantuni Wrap</span>
+    </figure>
+    <figure class="g-card" data-q="medovik honey cake russian">
+      <span class="g-tag">Medovik</span>
+    </figure>
+  </div>
+</section>
+
 <!-- ===== Signature parallax ===== -->
 <section class="signature stack" id="signature">
   <div class="parallax-layer back" data-depth="0.2"></div>
@@ -233,6 +276,57 @@
       <label class="full"><span>Note</span><input type="text" name="note" placeholder="Birthday, allergies, window seat…" /></label>
       <button class="btn btn-primary"><span>Request Table</span></button>
       <p class="reserve-msg" id="reserveMsg"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Catering ===== -->
+<section class="catering stack" id="catering">
+  <div class="cater-grid">
+    <div class="cater-copy reveal">
+      <p class="eyebrow">Catering & Events</p>
+      <h2>Bring the <em>flame</em><br/>to your table.</h2>
+      <p>
+        Weddings, corporate lunches, birthdays, film sets — we cater across
+        Vancouver and the Lower Mainland. Custom menus from 20 to 500 guests,
+        full setup, halal options, vegan & vegetarian-friendly.
+      </p>
+      <ul class="cater-features">
+        <li><strong>20–500</strong><span>guest range</span></li>
+        <li><strong>72h</strong><span>min. lead time</span></li>
+        <li><strong>$28+</strong><span>per head</span></li>
+        <li><strong>★★★★★</strong><span>halal · vegan friendly</span></li>
+      </ul>
+    </div>
+
+    <form class="cater-form reveal" id="cateringForm" autocomplete="off">
+      <h3>Get a quote</h3>
+      <div class="row">
+        <label><span>Your Name</span><input type="text" required name="name" /></label>
+        <label><span>Email</span><input type="email" required name="email" /></label>
+      </div>
+      <div class="row">
+        <label><span>Phone</span><input type="tel" name="phone" /></label>
+        <label><span>Event Type</span>
+          <select name="eventType" required>
+            <option value="">Choose…</option>
+            <option>Wedding</option>
+            <option>Corporate</option>
+            <option>Birthday</option>
+            <option>Film / Production</option>
+            <option>Private Dinner</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label><span>Event Date</span><input type="date" required name="date" /></label>
+        <label><span>Guest Count</span><input type="number" min="20" max="500" required name="guests" value="50" /></label>
+      </div>
+      <label class="full"><span>Location / Venue</span><input type="text" name="venue" placeholder="Address or venue name" /></label>
+      <label class="full"><span>Tell us about your event</span><textarea name="notes" rows="3" placeholder="Cuisine focus, dietary needs, budget range, setup requirements…"></textarea></label>
+      <button class="btn btn-primary"><span>Request Quote</span></button>
+      <p class="cater-msg" id="cateringMsg"></p>
     </form>
   </div>
 </section>

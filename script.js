@@ -258,6 +258,69 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+// ---------- Promo bar ----------
+const PROMO_SLIDES = [
+  { pill: 'Today', text: '<strong>Beef Döner Plate</strong> — chef\'s pick of the day · $25.99' },
+  { pill: 'Free Pops', text: 'Large döner combos — <strong>free pops included</strong>' },
+  { pill: 'New', text: '<strong>Banana Curry Pizza</strong> — sweet, savory, exotic' },
+  { pill: 'Catering', text: 'Book us for your event — <strong>20 to 500 guests</strong>' },
+  { pill: 'Hand-Stretched', text: 'All <strong>pide & lavash</strong> baked fresh every morning' },
+];
+const promoTrack = document.getElementById('promoTrack');
+const promoEl = document.getElementById('promo');
+const promoClose = document.getElementById('promoClose');
+
+if (!localStorage.getItem('cf_promo_dismissed')) {
+  promoTrack.innerHTML = PROMO_SLIDES.map((s, i) =>
+    `<div class="slide${i === 0 ? ' active' : ''}"><span class="pill">${s.pill}</span><span>${s.text}</span></div>`
+  ).join('');
+  let pi = 0;
+  setInterval(() => {
+    const slides = promoTrack.querySelectorAll('.slide');
+    slides[pi].classList.remove('active');
+    pi = (pi + 1) % slides.length;
+    slides[pi].classList.add('active');
+  }, 4000);
+} else {
+  document.body.classList.add('promo-dismissed');
+}
+
+promoClose.addEventListener('click', () => {
+  document.body.classList.add('promo-dismissed');
+  localStorage.setItem('cf_promo_dismissed', '1');
+});
+
+// ---------- Gallery: load food images with fallback ----------
+const galleryCards = document.querySelectorAll('.g-card');
+galleryCards.forEach((card, i) => {
+  const q = encodeURIComponent(card.dataset.q || 'food');
+  // Use Unsplash Source endpoint with a stable seed per card
+  const url = `https://source.unsplash.com/featured/800x800/?${q}&sig=${i}`;
+  const img = new Image();
+  img.onload = () => {
+    card.style.setProperty('--bg', `url(${img.src})`);
+  };
+  img.onerror = () => {
+    // graceful fallback gradient
+    const palette = [
+      'linear-gradient(135deg,#7a1020,#e63946,#ffb84d)',
+      'linear-gradient(135deg,#0a1628,#16294a,#d4a574)',
+      'linear-gradient(135deg,#3a1810,#a04020,#e8c08a)',
+    ];
+    card.style.setProperty('--bg', palette[i % palette.length]);
+  };
+  img.src = url;
+});
+
+// ---------- Catering form ----------
+document.getElementById('cateringForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  const msg = document.getElementById('cateringMsg');
+  msg.textContent = `Thanks ${f.name.value.trim()}! We'll send a custom quote for ${f.guests.value} guests on ${f.date.value} to ${f.email.value}.`;
+  setTimeout(() => f.reset(), 100);
+});
+
 // ---------- Reservation form ----------
 document.getElementById('reserveForm').addEventListener('submit', e => {
   e.preventDefault();
